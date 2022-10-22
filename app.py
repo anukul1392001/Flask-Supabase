@@ -40,6 +40,11 @@ parser = reqparse.RequestParser()
 #     data = []
 #     print(data)
 
+
+class home(Resource):
+    def get(self):
+        return "Nikhil Kumar"
+        
 class update(Resource):
     def get(self):
         status = request.args.get('status', type=str)
@@ -87,7 +92,7 @@ api.add_resource(log, '/log')
 api.add_resource(update, '/update')
 api.add_resource(insert,'/insert')  
 api.add_resource(delete,'/delete')  
-
+api.add_resource(home,'/')  
 
 if __name__ == '__main__':
     app.run(debug=True)
